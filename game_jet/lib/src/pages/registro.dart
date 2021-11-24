@@ -4,11 +4,10 @@ import 'package:game_jet/src/providers/login_form_provider.dart';
 import 'package:game_jet/src/ui/input_decorations.dart';
 import 'package:game_jet/src/widgets/auth_background.dart';
 import 'package:game_jet/src/widgets/card_container.dart';
-import 'package:game_jet/src/widgets/card_container.dart';
 import 'package:game_jet/src/widgets/widgets.dart';
 import 'package:provider/provider.dart';
 
-class LoginScreen extends StatelessWidget {
+class RegistroScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,15 +20,15 @@ class LoginScreen extends StatelessWidget {
               child: Column(
             children: [
               SizedBox(height: 10),
-              Text('Login', style: Theme.of(context).textTheme.headline4),
+              Text('Registrarse', style: Theme.of(context).textTheme.headline4),
               SizedBox(height: 30),
               ChangeNotifierProvider(
-                  create: (_) => LoginFormProvider(), child: _LoginForm())
+                  create: (_) => LoginFormProvider(), child: _RegisterForm())
             ],
           )),
           SizedBox(height: 50),
           Text(
-            'Crear una nueva cuenta',
+            '¿Tienes una cuenta?',
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
           SizedBox(height: 50),
@@ -39,7 +38,7 @@ class LoginScreen extends StatelessWidget {
   }
 }
 
-class _LoginForm extends StatelessWidget {
+class _RegisterForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final loginForm = Provider.of<LoginFormProvider>(context);
@@ -50,6 +49,16 @@ class _LoginForm extends StatelessWidget {
         autovalidateMode: AutovalidateMode.onUserInteraction,
         child: Column(
           children: [
+            SizedBox(height: 30),
+            TextFormField(
+              autocorrect: false,
+              keyboardType: TextInputType.name,
+              decoration: InputDecorations.authInputDecoration(
+                  hintText: 'Jose Hernandez',
+                  labelText: 'Nombre',
+                  prefixIcon: Icons.person),
+            ),
+            SizedBox(height: 30),
             TextFormField(
               autocorrect: false,
               keyboardType: TextInputType.emailAddress,
@@ -94,7 +103,7 @@ class _LoginForm extends StatelessWidget {
                 child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 80, vertical: 15),
                     child: Text(
-                      loginForm.isLoading ? 'Espere' : 'Ingresar',
+                      loginForm.isLoading ? 'Espere' : 'Registrar',
                       style: TextStyle(color: Colors.white),
                     )),
                 onPressed: loginForm.isLoading
@@ -111,7 +120,7 @@ class _LoginForm extends StatelessWidget {
                         // TODO: validar si el login es correcto
                         loginForm.isLoading = false;
 
-                        Navigator.pushReplacementNamed(context, 'home');
+                        Navigator.pushReplacementNamed(context, 'login');
                       })
           ],
         ),

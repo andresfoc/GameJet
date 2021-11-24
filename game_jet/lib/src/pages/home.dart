@@ -9,9 +9,7 @@ class Home extends StatelessWidget {
         children: [
           AuthBackground(
               child: Column(
-            children: [Container(
-              color: 
-            )],
+            children: [Container(color: Color.fromRGBO(30, 30, 25, 1))],
           ))
         ],
       ),
