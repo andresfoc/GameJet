@@ -14,9 +14,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'App GameJet',
-      initialRoute: 'login',
+      initialRoute: 'registro',
       routes: {
         'login': (_) => LoginScreen(),
+        'registro': (_) => RegistroScreen(),
         'home': (_) => Home(),
       },
       theme:
