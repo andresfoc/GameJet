@@ -1,7 +1,7 @@
 import 'dart:collection';
 
 import 'package:flutter/material.dart';
-import 'package:game_jet/src/widgets/auth_background.dart';
+import 'package:game_jet/src/widgets/gjet_background.dart';
 import 'package:game_jet/src/widgets/white_box.dart';
 
 class Home extends StatelessWidget {

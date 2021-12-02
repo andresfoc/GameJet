@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:game_jet/src/providers/login_form_provider.dart';
 
 import 'package:game_jet/src/ui/input_decorations.dart';
-import 'package:game_jet/src/widgets/auth_background.dart';
+import 'package:game_jet/src/widgets/gjet_background.dart';
 import 'package:game_jet/src/widgets/card_container.dart';
 import 'package:game_jet/src/widgets/widgets.dart';
 import 'package:provider/provider.dart';
@@ -110,7 +110,7 @@ class _LoginForm extends StatelessWidget {
                         // TODO: validar si el login es correcto
                         loginForm.isLoading = false;
 
-                        Navigator.pushReplacementNamed(context, 'home');
+                        Navigator.pushReplacementNamed(context, 'posts');
                       })
           ],
         ),
